@@ -3,20 +3,6 @@
         (() => {
 
             let dinos = [];
-            
-            function readDinosJSONDataFromFile(httpMethod, filePath) {
-                const xhr = new XMLHttpRequest(),
-                      method = httpMethod ? httpMethod : "GET",
-                      url = filePath;
-                xhr.onreadystatechange = function() {
-                    if (this.readyState ===  XMLHttpRequest.DONE && this.status === 200) {
-                        const data = JSON.parse(this.responseText).Dinos;
-                        constructDinoObjects(data);
-                    }
-                };
-                xhr.open(method, url);
-                xhr.send();
-            }
 
             class Animal {
                 
@@ -34,6 +20,20 @@
 
             Animal.prototype.getName = function() {
                 return this.species;
+            }
+
+            function readDinosJSONDataFromFile(httpMethod, filePath) {
+                const xhr = new XMLHttpRequest(),
+                      method = httpMethod ? httpMethod : "GET",
+                      url = filePath;
+                xhr.onreadystatechange = function() {
+                    if (this.readyState ===  XMLHttpRequest.DONE && this.status === 200) {
+                        const data = JSON.parse(this.responseText).Dinos;
+                        constructDinoObjects(data);
+                    }
+                };
+                xhr.open(method, url);
+                xhr.send();
             }
 
             function onCompareMeButtonClick() {
