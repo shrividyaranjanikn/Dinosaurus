@@ -172,3 +172,8 @@ select {
     display: block;
     font-size: 0.7em;
 }
+
+/* hide form */
+.hide {
+    display: none;
+}
