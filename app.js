@@ -106,7 +106,7 @@
                 // hide form
                 document.getElementById('dino-compare').className = 'hide';
 
-                // read inputs
+                // read inputs from form
                 const nameElement = document.getElementById('name');
                 const feetElement = document.getElementById('feet');
                 const inchesElement = document.getElementById('inches');
@@ -124,7 +124,7 @@
                 setHumanProperties(name, weight, height, diet);
 
                 const gridElement = document.getElementById("grid");
-                gridElement.innerHTML = getGridHtml(); // TODO: set the html content for Dinos here
+                gridElement.innerHTML = getGridHtml();
             }
 
             function setHumanProperties(name, weight, height, diet) {
